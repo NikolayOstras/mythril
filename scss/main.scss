@@ -1,0 +1,48 @@
+@import '../vendor/bootstrap-reboot.min';
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+:root {
+  --gold: #AA7F12;
+  --accent: #B7953F;
+  --white: #FFF;
+  --black: #000;
+  --grid-height: null;
+}
+
+path {
+  fill: var(--gold);
+}
+
+body {
+  color: var(--gold);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: .5em;
+}
+
+.preloader {
+  display: none;
+}
+
+.container {
+  padding: 0 50px;
+
+  @media (max-width: 767.98px) {
+    padding: 0 15px;
+  }
+}
+
+@import '../common/_header';
+@import './_hero';

@@ -1,0 +1,85 @@
+mixin header 
+	.container.header__container(class!=attributes.class) 
+		header.header
+			a.logo(href="#") 
+				|Mythril 
+				br
+				|Studio 
+			nav.nav 
+				ul.nav__list 
+					li.nav__item 
+						a.nav__link(href="#") Services
+					li.nav__item 
+						a.nav__link(href="#") NFT
+					li.nav__item 
+						a.nav__link(href="#") Jobs
+					li.nav__item 
+						a.nav__link(href="#") About
+					li.nav__item 
+						a.nav__link(href="#") Contacts
+			.nav-mobile
+				a.nav-mobile__item(href="#")
+					+icon("#arrow")(class="nav-mobile__icon")
+					|prev
+				a.nav-mobile__item.nav-mobile__item--reversed(href="#")
+					+icon("#arrow")(class="nav-mobile__icon")
+					|next
+				button.nav-mobile__button
+					span
+		ul.nav__list.nav-mobile__list 
+			li.nav__item 
+				a.nav__link(href="#") Services
+			li.nav__item 
+				a.nav__link(href="#") NFT
+			li.nav__item 
+				a.nav__link(href="#") Jobs
+			li.nav__item 
+				a.nav__link(href="#") About
+			li.nav__item 
+				a.nav__link(href="#") Contacts
+		.header__bottom 
+			ul.header-network 
+				li.header-network__item
+					a.header-network__link(href="") 
+						+icon("#behance")
+				li.header-network__item
+					a.header-network__link(href="")
+						+icon("#linkedin") 
+				li.header-network__item
+					a.header-network__link(href="")
+						+icon("#dribble") 
+				li.header-network__item
+					a.header-network__link(href="")
+						+icon("#instagram") 
+				li.header-network__item
+					a.header-network__link(href="")
+						+icon("#twitter") 
+			a(href="#").header__mail info@mythril.space
+
+mixin preloader 
+	section.preloader 
+		.preloader__header
+			a.logo(href="#") 
+				|Mythril 
+				br
+				|Studio 
+		.preloader__body Making art..
+		.preloader__footer We are a studio that develops and creates digital art.
+
+
+mixin side-nav 
+	nav.side-nav(class!=attributes.class)
+		ul.side-nav__list
+			li.side-nav__item
+				a.side-nav__link(href="#") Services
+			li.side-nav__item
+				a.side-nav__link(href="#") NFT
+			li.side-nav__item
+				a.side-nav__link(href="#") Jobs 
+			li.side-nav__item
+				a.side-nav__link(href="#") About 
+			li.side-nav__item
+				a.side-nav__link(href="#") Contacts
+		button.side-nav__button 
+			span next
+			+icon("#arrow")
