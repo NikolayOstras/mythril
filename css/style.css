@@ -629,7 +629,7 @@ body.inactive {
   justify-content: space-between;
   writing-mode: vertical-lr;
   height: 100vh;
-  padding: 114px 30px 30px;
+  padding: 114px 30px 30px 0;
   background-color: #000;
   z-index: 10;
 }
@@ -641,7 +641,7 @@ body.inactive {
 @media (max-width: 991.98px) {
   .side-nav {
     padding-right: 10px;
-    padding-left: 10px;
+    padding-left: 0px;
   }
 }
 @media (max-width: 767.98px) {
@@ -862,4 +862,118 @@ body.inactive {
   position: absolute;
   content: "-";
   right: 0;
+}
+
+.nft {
+  position: relative;
+  max-width: 1120px;
+  min-height: 100vh;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nft::after, .nft::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 100%;
+  top: 0;
+  background-color: var(--gold);
+}
+@media (max-width: 992px) {
+  .nft::after, .nft::before {
+    display: none;
+  }
+}
+.nft::before {
+  left: 0;
+}
+.nft::after {
+  right: 0;
+}
+.nft__header {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .nft__header {
+    display: initial;
+  }
+}
+@media (max-width: 1024px) {
+  .nft__side-nav {
+    display: none;
+  }
+}
+.nft__title {
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid var(--gold);
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.item:nth-child(2n) {
+  flex-direction: column-reverse;
+}
+.item__title {
+  font-weight: 600;
+  font-size: 18px;
+}
+.item__img {
+  flex-shrink: 0;
+}
+
+.square {
+  position: absolute;
+  border: 1px solid var(--gold);
+  top: 0;
+  left: 160px;
+  width: calc(100% - 320px);
+  height: 100%;
+}
+@media (max-width: 992px) {
+  .square {
+    display: none;
+  }
+}
+.square--sm {
+  top: 197px;
+  left: 320px;
+  width: 480px;
+  height: calc(100% - 394px);
+}
+@media (max-height: 1024px) {
+  .square--sm {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .square--sm {
+    display: none;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  position: relative;
+  margin-top: 132px;
+}
+@media (max-width: 767.92px) {
+  .grid {
+    grid-column-gap: 30px;
+  }
 }
