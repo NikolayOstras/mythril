@@ -5,13 +5,14 @@
 /***/ (function() {
 
 const $HEADER = document.querySelector('.header__container');
-const $MOBILE_NAV = $HEADER.querySelectorAll('.nav-mobile__item');
 const $BURGER = $HEADER.querySelector('.nav-mobile__button');
 const $MENU = $HEADER.querySelector('.nav-mobile__list');
+const $BODY = document.querySelector('body');
 
 $BURGER.onclick = () => {
 	$HEADER.classList.toggle('is-active');
 	$MENU.classList.toggle('is-active');
+	$BODY.classList.toggle('inactive');
 }
 
 /***/ }),
@@ -13144,18 +13145,50 @@ var __webpack_exports__ = {};
 !function() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _common_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_common_header__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(104);
 
 
 
 
+swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_1__.Autoplay]);
 
-// const HERO_TITLE_SWIPER = new Swiper('.hero__title-slider', {
 
-// })
+
+const HERO_TITLE_SWIPER = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.hero__title-slider', {
+  loopedSlides: 3,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false
+  },
+  speed: 50000,
+  breakpoints: {
+    768: {
+      slidesPerView: 2.5,
+      spaceBetween: 60
+    },
+  }
+})
+
+const HERO_GALLERY_SWIPER = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.hero-gallery', {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 100,
+    disableOnInteraction: false,
+    reverseDirection: true
+  },
+  speed: 50000,
+  breakpoints: {
+    768: {
+      slidesPerView: 2.5,
+      spaceBetween: 60
+    },
+  }
+})
 }();
 /******/ })()
 ;
