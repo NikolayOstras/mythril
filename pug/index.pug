@@ -1,0 +1,49 @@
+extends _layout.pug
+block content
+  +header(class="hero__header")
+  section.hero
+    h1.visually-hidden Nft studio art
+    .hero__body 
+      .hero__title-slider
+        .swiper-wrapper
+          .swiper-slide.hero-title__item NFT Studio art
+          .swiper-slide.hero-title__item NFT Studio art
+          .swiper-slide.hero-title__item NFT Studio art
+      .hero-gallery
+        .swiper-wrapper 
+          .swiper-slide.hero-gallery__item
+            img(src="./img/hero/1.jpg" alt="nft")
+          .swiper-slide.hero-gallery__item
+            img(src="./img/hero/2.jpg" alt="nft")
+          .swiper-slide.hero-gallery__item
+            img(src="./img/hero/3.jpg" alt="nft")
+      .hero__title-slider
+        .swiper-wrapper
+          .swiper-slide.hero-title__item 
+          .swiper-slide.hero-title__item
+          .swiper-slide.hero-title__item
+    .hero__footer.container 
+      ul.network.hero__network 
+        li.network__item
+          a.network__link(href="") 
+            +icon("#behance")
+        li.network__item
+          a.network__link(href="")
+            +icon("#linkedin") 
+        li.network__item
+          a.network__link(href="")
+            +icon("#dribble") 
+        li.network__item
+          a.network__link(href="")
+            +icon("#instagram") 
+        li.network__item
+          a.network__link(href="")
+            +icon("#twitter") 
+      a(href="#").hero__next
+        +icon("#arrow")
+        |next 
+      p.hero__about 
+        |We are a studio that develops and creates digital art.
+
+block scripts
+  script(src="./js/index.js") 

@@ -1,0 +1,78 @@
+@import '../vendor/bootstrap-reboot.min';
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+:root {
+  --gold: #AA7F12;
+  --accent: #B7953F;
+  --white: #FFF;
+  --black: #000;
+  --grid-height: null;
+}
+
+path {
+  fill: var(--gold);
+}
+
+body {
+  color: var(--gold);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: .5em;
+}
+
+.preloader {
+  display: none;
+}
+
+.container {
+  padding: 0 50px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @media (max-width: 767.98px) {
+    padding: 0 15px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body.inactive {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+@import '../common/_header';
+@import '../common/_side-nav';
+@import './_hero';
+@import './_services';
+@import './_nft';
