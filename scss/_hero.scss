@@ -42,11 +42,6 @@
     flex-direction: column-reverse;
     align-items: center;
 
-    & .icon {
-      width: 24px;
-      height: 24px;
-    }
-
     @media (max-width: 767.98px) {
       display: none;
     }
