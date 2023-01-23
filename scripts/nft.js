@@ -1,3 +1,5 @@
+import '../common/preloader'
+import '../common/cursor'
 import '../common/header'
 import '../vendor/lodash.min'
 import { gsap } from "gsap";
@@ -71,3 +73,13 @@ TL.fromTo('.square--xl', { duration: 0.5, scale: 0 }, { scale: 1 })
   .from('.side-nav__item', { duration: 1, y: -200, opacity: 0, stagger: 0.1 })
   .from('.side-nav__button', { duration: 1, y: -200, opacity: 0 })
   .from(MENU_ITEMS_REVERSED, { duration: 1.5, x: -200, opacity: 0, stagger: 0.1 }, '-=3')
+
+const LINKS = document.querySelectorAll('.href')
+LINKS.forEach(element => {
+  element.addEventListener("click", (e) => {
+    e.preventDefault()
+    const HREF = element.href
+    TL.reverse()
+    setTimeout(function () { window.location = HREF }, 5000);
+  })
+});

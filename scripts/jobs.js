@@ -1,3 +1,5 @@
+import '../common/preloader'
+import '../common/cursor'
 import '../common/header'
 
 import { gsap } from "gsap";
@@ -107,4 +109,14 @@ $MODAL_BUTTONS.forEach(function (elem) {
   elem.addEventListener('click', function (e) {
     MODAL_TL.play();
   });
+});
+
+const LINKS = document.querySelectorAll('.href')
+LINKS.forEach(element => {
+  element.addEventListener("click", (e) => {
+    e.preventDefault()
+    const HREF = element.href
+    TL.reverse()
+    setTimeout(function () { window.location = HREF }, 4000);
+  })
 });

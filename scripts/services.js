@@ -1,3 +1,5 @@
+import '../common/preloader'
+import '../common/cursor'
 import '../common/header'
 
 import { gsap } from "gsap";
@@ -51,3 +53,12 @@ TL.from('.services-slider', { duration: 2, y: -200, opacity: 0 })
   .from('.services-slider-2', { duration: 2, y: 200, opacity: 0 }, '-=1')
   .from('.side-nav__item', { duration: 1, y: -200, opacity: 0, stagger: 0.1 })
   .from('.side-nav__button', { duration: 1, y: -200, opacity: 0 })
+const LINKS = document.querySelectorAll('.href')
+LINKS.forEach(element => {
+  element.addEventListener("click", (e) => {
+    e.preventDefault()
+    const HREF = element.href
+    TL.reverse()
+    setTimeout(function () { window.location = HREF }, 5300);
+  })
+});

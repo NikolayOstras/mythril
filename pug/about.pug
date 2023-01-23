@@ -1,7 +1,7 @@
 extends _layout.pug
 block content
-  +side-nav(class="about__side-nav")
-  +header(class="about__header")
+  +side-nav("/contacts.html")(class="about__side-nav")
+  +header("/jobs.html","/contacts.html")(class="about__header")
   section.about
     .about__collapse
       .accordion.accordion-1

@@ -1,3 +1,5 @@
+import '../common/preloader'
+import '../common/cursor'
 import '../common/header'
 import Accordion from '../vendor/components/accordion/accordion'
 import '../vendor/components/accordion/accordion.css'
@@ -56,3 +58,13 @@ const TL = gsap.timeline()
 TL.from('.about__grid', { duration: 2, opacity: 0, x: -100 })
   .from('.about__wrapper', { duration: 1, opacity: 0, y: -100 })
   .from(MENU_ITEMS_REVERSED, { duration: 1.5, x: -200, opacity: 0, stagger: 0.1 })
+
+const LINKS = document.querySelectorAll('.href')
+LINKS.forEach(element => {
+  element.addEventListener("click", (e) => {
+    e.preventDefault()
+    const HREF = element.href
+    TL.reverse()
+    setTimeout(function () { window.location = HREF }, 4300);
+  })
+});

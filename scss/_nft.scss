@@ -2,14 +2,20 @@
 
   position: relative;
   max-width: 1120px;
-  height: 100%;
+  height: calc(100% + 90px);
   margin: 0 auto;
+  margin-top: -90px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   padding-top: 72px;
+
+  @media (max-width: 1280px) {
+    height: 100%;
+    margin-top: 0;
+  }
 
 
   &::after,
@@ -103,19 +109,25 @@
   height: calc(100% - 20px);
 
   &--sm {
-    top: 220px;
+    top: 200px;
     left: 325px;
-    width: 470px;
-    height: 454px;
+    width: 478px;
+    height: 394px;
 
     @media (max-height: 1024px) {
       display: none;
     }
 
     @media (max-width: 1280px) {
-      // display: none;
+      display: none;
     }
 
+  }
+
+  &--xl {
+    @media (max-width: 992px) {
+      display: none;
+    }
   }
 }
 

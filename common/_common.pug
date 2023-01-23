@@ -1,27 +1,27 @@
-mixin header 
-	.container.header__container(class!=attributes.class) 
+mixin header(prev,next)
+	.header__container.visually-hidden(class!=attributes.class) 
 		header.header
-			a.logo(href="#") 
+			a.logo.href(href="/index.html") 
 				|Mythril 
 				br
 				|Studio 
 			nav.nav 
 				ul.nav__list 
 					li.nav__item 
-						a.nav__link(href="/services.html") Services
+						a.nav__link.href(href="/services.html") Services
 					li.nav__item 
-						a.nav__link(href="/nft.html") NFT
+						a.nav__link.href(href="/nft.html") NFT
 					li.nav__item 
-						a.nav__link(href="/jobs.html") Jobs
+						a.nav__link.href(href="/jobs.html") Jobs
 					li.nav__item 
-						a.nav__link(href="/about.html") About
+						a.nav__link.href(href="/about.html") About
 					li.nav__item 
-						a.nav__link(href="/contacts.html") Contacts
+						a.nav__link.href(href="/contacts.html") Contacts
 			.nav-mobile
-				a.nav-mobile__item(href="#")
+				a.nav-mobile__item(href=prev)
 					+icon("#arrow")(class="nav-mobile__icon")
 					|prev
-				a.nav-mobile__item.nav-mobile__item--reversed(href="#")
+				a.nav-mobile__item.nav-mobile__item--reversed(href=next)
 					+icon("#arrow")(class="nav-mobile__icon")
 					|next
 				button.nav-mobile__button
@@ -57,9 +57,9 @@ mixin header
 			a(href="#").header__mail info@mythril.space
 
 mixin preloader 
-	section.preloader 
+	section.preloader.container 
 		.preloader__header
-			a.logo(href="#") 
+			a.logo(href="/index.html") 
 				|Mythril 
 				br
 				|Studio 
@@ -67,20 +67,20 @@ mixin preloader
 		.preloader__footer We are a studio that develops and creates digital art.
 
 
-mixin side-nav 
+mixin side-nav(next)
 	nav.side-nav(class!=attributes.class)
 		ul.side-nav__list
 			li.side-nav__item
-				a.side-nav__link(href="/services.html") Services
+				a.side-nav__link.href(href="/services.html") Services
 			li.side-nav__item
-				a.side-nav__link(href="/nft.html") NFT
+				a.side-nav__link.href(href="/nft.html") NFT
 			li.side-nav__item
-				a.side-nav__link(href="/jobs.html") Jobs 
+				a.side-nav__link.href(href="/jobs.html") Jobs 
 			li.side-nav__item
-				a.side-nav__link(href="/about.html") About 
+				a.side-nav__link.href(href="/about.html") About 
 			li.side-nav__item
-				a.side-nav__link(href="/contacts.html") Contacts
-		button.side-nav__button 
+				a.side-nav__link.href(href="/contacts.html") Contacts
+		a.side-nav__button.href(href=next) 
 			span next
 			+icon("#arrow")
 

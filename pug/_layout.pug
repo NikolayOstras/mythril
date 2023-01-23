@@ -6,9 +6,11 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title Mythril
     link(rel="stylesheet" href="css/style.css")
-  body(style="background: #000000;")
+  body(style="background: #000000;" data-barba="wrapper").inactive
     include ../common/_common.pug
     include ../common/_icon.pug
     +preloader
+    .cursor 
+    .cursor2
     block content 
     block scripts

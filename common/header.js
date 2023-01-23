@@ -3,8 +3,6 @@ const $BURGER = $HEADER.querySelector('.nav-mobile__button')
 const $MENU = $HEADER.querySelector('.nav-mobile__list')
 const $BODY = document.querySelector('body')
 
-$BODY.style.paddingTop = `${$HEADER.offsetHeight}px`
-
 $BURGER.onclick = () => {
 	$HEADER.classList.toggle('is-active');
 	$MENU.classList.toggle('is-active');

@@ -1,3 +1,5 @@
+import '../common/preloader'
+import '../common/cursor'
 import '../common/header'
 import { gsap } from "gsap";
 import Swiper from 'swiper';
@@ -49,3 +51,13 @@ TL.from(MENU_ITEMS_REVERSED, { duration: 1.5, x: -200, opacity: 0, stagger: 0.1 
   .from('.hero__title-slider', { duration: 0.1, opacity: 0 })
   .from('.hero-gallery', { duration: 1, y: -200, scale: 1.1, opacity: 0 })
   .from('.hero__next', { duration: 1, y: -200, opacity: 0 });
+
+const LINKS = document.querySelectorAll('.href')
+LINKS.forEach(element => {
+  element.addEventListener("click", (e) => {
+    e.preventDefault()
+    const HREF = element.href
+    TL.reverse()
+    setTimeout(function () { window.location = HREF }, 4300);
+  })
+});
