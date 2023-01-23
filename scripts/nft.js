@@ -1,5 +1,6 @@
 import '../common/header'
 import '../vendor/lodash.min'
+import { gsap } from "gsap";
 
 const $ITEMS = document.querySelectorAll('.item')
 const $GRID = document.querySelector('.grid')
@@ -59,3 +60,14 @@ if ($GRID) {
   gridInit();
   fillRandomGrid();
 }
+
+// animations
+const MENU_ITEMS = document.querySelectorAll('.nav__item ')
+const MENU_ITEMS_REVERSED = [...MENU_ITEMS].reverse()
+const TL = gsap.timeline()
+TL.fromTo('.square--xl', { duration: 0.5, scale: 0 }, { scale: 1 })
+  .fromTo('.square--sm', { duration: 0.5, scale: 0 }, { scale: 1 })
+  .from('.item', { duration: 0.5, scale: 1.2, y: -100, opacity: 0, stagger: 0.25 })
+  .from('.side-nav__item', { duration: 1, y: -200, opacity: 0, stagger: 0.1 })
+  .from('.side-nav__button', { duration: 1, y: -200, opacity: 0 })
+  .from(MENU_ITEMS_REVERSED, { duration: 1.5, x: -200, opacity: 0, stagger: 0.1 }, '-=3')

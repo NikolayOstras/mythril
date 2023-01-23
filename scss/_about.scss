@@ -1,8 +1,10 @@
 .about {
   display: flex;
+  align-items: center;
   height: fit-content;
   padding: 0 50px;
   gap: 20px;
+  height: 100%;
 
   @media (max-width: 1120px) {
     display: block;
@@ -168,6 +170,7 @@
     min-height: 100px;
     margin-left: -50px;
     width: calc(100% + 100px);
+    height: auto;
 
 
 
@@ -175,7 +178,7 @@
       overflow: hidden;
       margin-left: 0;
       width: 264px;
-      height: auto;
+      height: 100vh;
 
     }
 
@@ -228,7 +231,11 @@
 
   // .accordion__control
 
-  &__control {}
+  &__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   // .accordion__title
 
@@ -256,6 +263,6 @@
 .accordion.is-open {
 
   & .accordion__icon svg {
-    transform: rotate(180deg);
+    transform: rotate(135deg);
   }
 }

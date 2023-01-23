@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "gsap": "^3.11.4",
+    "just-validate": "^4.0.2",
+    "normalize.css": "^8.0.1",
     "swiper": "^8.4.6"
   }
 }

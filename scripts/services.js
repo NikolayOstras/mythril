@@ -1,5 +1,6 @@
 import '../common/header'
 
+import { gsap } from "gsap";
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper';
 Swiper.use([Autoplay]);
@@ -42,3 +43,11 @@ const SLIDER_2 = new Swiper('.services-slider-2', {
     },
   }
 })
+
+// animations 
+
+const TL = gsap.timeline()
+TL.from('.services-slider', { duration: 2, y: -200, opacity: 0 })
+  .from('.services-slider-2', { duration: 2, y: 200, opacity: 0 }, '-=1')
+  .from('.side-nav__item', { duration: 1, y: -200, opacity: 0, stagger: 0.1 })
+  .from('.side-nav__button', { duration: 1, y: -200, opacity: 0 })

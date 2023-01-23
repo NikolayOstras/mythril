@@ -1,4 +1,6 @@
+// @import '../node_modules/normalize.css/normalize';
 @import '../vendor/bootstrap-reboot.min';
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;900&display=swap');
 
 a {
   color: inherit;
@@ -27,10 +29,17 @@ body {
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
+  width: 24px;
+  height: 24px;
   margin: .5em;
 }
+
+html,
+body {
+  height: 100%;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
 
 .preloader {
   display: none;
@@ -76,3 +85,7 @@ body.inactive {
 @import './_hero';
 @import './_services';
 @import './_nft';
+@import './_modal';
+@import './_jobs';
+@import './_about';
+@import './_contacts';

@@ -126,7 +126,7 @@
           <div class="preloader__body">Making art..</div>
           <div class="preloader__footer">We are a studio that develops and creates digital art.</div>
         </section>
-        <div class="container header__container hero__header"> 
+        <div class="container header__container"> 
           <header class="header"><a class="logo" href="#">
                Mythril <br>Studio </a>
             <nav class="nav"> 
@@ -180,61 +180,34 @@
             </ul><a class="header__mail" href="#">info@mythril.space</a>
           </div>
         </div>
-    <section class="hero">
-      <h1 class="visually-hidden">Nft studio art</h1>
-      <div class="hero__body"> 
-        <div class="hero__title-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide hero-title__item">NFT Studio art</div>
-            <div class="swiper-slide hero-title__item">NFT Studio art</div>
-            <div class="swiper-slide hero-title__item">NFT Studio art</div>
-          </div>
+    <section class="contacts">
+      <div class="contacts__content">
+        <div class="contacts__img"><img src="img/contacts/1.jpg" alt></div>
+        <div class="form">
+          <h2 class="form__header">Wirte to us</h2>
+          <p class="form__desc">We are a studio that develops and creates digital art.</p>
+          <form class="form" action="#">
+            <div class="input-box">
+              <input id="email" type="email" name="email" required placeholder="E-Mail" onfocus="placeholder=''" onblur="placeholder='E-Mail'">
+              <label class="form-error" for="email">Incorrect</label>
+            </div>
+            <div class="input-box">
+              <input id="text" type="text" name="text" required placeholder="Message" onfocus="placeholder=''" onblur="placeholder='Message'">
+              <label class="form-error" for="text">Too short</label>
+            </div>
+            <div class="form__bottom">
+              <div class="check">
+                <input id="checkbox" type="checkbox" name="checkbox" required>
+                <label class="label-checkbox" for="checkbox"></label><span>I’m not a robot</span>
+              </div>
+              <button class="form__button" type="button">send</button>
+            </div>
+          </form>
         </div>
-        <div class="hero-gallery">
-          <div class="swiper-wrapper"> 
-            <div class="swiper-slide hero-gallery__item"><img src="./img/hero/1.jpg" alt="nft"></div>
-            <div class="swiper-slide hero-gallery__item"><img src="./img/hero/2.jpg" alt="nft"></div>
-            <div class="swiper-slide hero-gallery__item"><img src="./img/hero/3.jpg" alt="nft"></div>
-          </div>
-        </div>
-        <div class="hero__title-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide hero-title__item"> </div>
-            <div class="swiper-slide hero-title__item"></div>
-            <div class="swiper-slide hero-title__item"></div>
-          </div>
-        </div>
-      </div>
-      <div class="hero__footer container"> 
-        <ul class="network hero__network"> 
-          <li class="network__item"><a class="network__link" href=""> 
-                  <svg class="icon">
-                    <use href="#behance"></use>
-                  </svg></a></li>
-          <li class="network__item"><a class="network__link" href="">
-                  <svg class="icon">
-                    <use href="#linkedin"></use>
-                  </svg></a></li>
-          <li class="network__item"><a class="network__link" href="">
-                  <svg class="icon">
-                    <use href="#dribble"></use>
-                  </svg></a></li>
-          <li class="network__item"><a class="network__link" href="">
-                  <svg class="icon">
-                    <use href="#instagram"></use>
-                  </svg></a></li>
-          <li class="network__item"><a class="network__link" href="">
-                  <svg class="icon">
-                    <use href="#twitter"></use>
-                  </svg></a></li>
-        </ul><a class="hero__next" href="#">
-              <svg class="icon">
-                <use href="#arrow"></use>
-              </svg>next </a>
-        <p class="hero__about">
-           We are a studio that develops and creates digital art.</p>
+        <div class="contacts__img"><img src="img/contacts/2.jpg" alt></div>
+        <div class="contacts__img"><img src="img/contacts/3.jpg" alt></div>
       </div>
     </section>
-    <script src="./js/index.js"> </script>
+    <script src="./js/contacts.js"> </script>
   </body>
 </html>

@@ -2,13 +2,14 @@
 
   position: relative;
   max-width: 1120px;
-  min-height: 100vh;
   height: 100%;
   margin: 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding-top: 72px;
 
 
   &::after,
@@ -20,7 +21,7 @@
     top: 0;
     background-color: var(--gold);
 
-    @media (max-width: 992px) {
+    @media (max-width: 1120px) {
       display: none;
     }
   }
@@ -30,7 +31,7 @@
   }
 
   &::after {
-    right: 0;
+    right: 1px;
   }
 
   // .nft__header
@@ -38,14 +39,14 @@
   &__header {
     display: none;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1280px) {
       display: initial;
     }
   }
 
   // .nft__side-nav
   &__side-nav {
-    @media (max-width: 1024px) {
+    @media (max-width: 1280px) {
       display: none;
     }
   }
@@ -58,8 +59,9 @@
     font-weight: 600;
     text-align: center;
     border: 1px solid var(--gold);
-    width: 160px;
+    width: 150px;
     height: 160px;
+    transform: translateX(5px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,6 +72,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 8;
 
   &:nth-child(2n) {
     flex-direction: column-reverse;
@@ -80,6 +83,7 @@
   &__title {
     font-weight: 600;
     font-size: 18px;
+    text-align: center;
   }
 
   // .item__img
@@ -96,24 +100,20 @@
   top: 0;
   left: 160px;
   width: calc(100% - 320px);
-  height: 100%;
-
-  @media (max-width: 992px) {
-    display: none;
-  }
+  height: calc(100% - 20px);
 
   &--sm {
-    top: 197px;
-    left: 320px;
-    width: 480px;
-    height: calc(100% - 394px);
+    top: 220px;
+    left: 325px;
+    width: 470px;
+    height: 454px;
 
     @media (max-height: 1024px) {
       display: none;
     }
 
-    @media (max-width: 992px) {
-      display: none;
+    @media (max-width: 1280px) {
+      // display: none;
     }
 
   }
@@ -126,9 +126,12 @@
 
   position: relative;
 
-  margin-top: 132px;
+  margin-top: 114px;
+  padding-bottom: 30px;
 
   @media (max-width: 767.92px) {
     grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    margin-top: 90px;
   }
 }
