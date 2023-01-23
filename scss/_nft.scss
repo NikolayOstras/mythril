@@ -30,7 +30,7 @@
   }
 
   &::after {
-    right: 1px;
+    right: 0;
   }
 
   // .nft__header
@@ -38,14 +38,14 @@
   &__header {
     display: none;
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1024px) {
       display: initial;
     }
   }
 
   // .nft__side-nav
   &__side-nav {
-    @media (max-width: 1280px) {
+    @media (max-width: 1024px) {
       display: none;
     }
   }
@@ -126,12 +126,9 @@
 
   position: relative;
 
-  margin-top: 114px;
-  padding-bottom: 30px;
+  margin-top: 132px;
 
   @media (max-width: 767.92px) {
     grid-column-gap: 30px;
-    grid-row-gap: 30px;
-    margin-top: 90px;
   }
 }

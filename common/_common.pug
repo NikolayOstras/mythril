@@ -83,25 +83,3 @@ mixin side-nav
 		button.side-nav__button 
 			span next
 			+icon("#arrow")
-
-
-//- jobs slider
-mixin slider(img1,img2)
-	.jobs-slider(class!=attributes.class) 
-		.swiper-wrapper 
-			.swiper-slide.jobs-slide 
-				.jobs-slide__img 
-					img(src=img1 alt="job")
-				.jobs-slide__content 
-					h4.jobs-slide__title Cyber Girls
-					p.jobs-slide__text 
-						|Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-					button.popup__button(data-micromodal-trigger='modal-1') look more
-			.swiper-slide.jobs-slide 
-				.jobs-slide__img 
-					img(src=img2 alt="job")
-				.jobs-slide__content 
-					h4.jobs-slide__title Cyber Girls
-					p.jobs-slide__text 
-						|Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-					button.popup__button(data-micromodal-trigger='modal-1') look more
