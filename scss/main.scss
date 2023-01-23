@@ -1,9 +1,8 @@
 @import '../vendor/bootstrap-reboot.min';
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;900&display=swap');
+@import '../js/about.css';
+@import '../js/index.css';
 
-html,
-body {
-  height: 100%;
-}
 
 a {
   color: inherit;
@@ -29,6 +28,7 @@ path {
 
 body {
   color: var(--gold);
+  padding-top: 90px;
 }
 
 .icon {
@@ -37,8 +37,15 @@ body {
   margin: .5em;
 }
 
+html,
+body {
+  height: 100%;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+
 .preloader {
-  display: none;
+  // display: none;
 }
 
 .container {
@@ -76,11 +83,57 @@ body.inactive {
   overflow: hidden;
 }
 
+.cursor {
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 1px solid var(--gold);
+  transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);
+  z-index: 12;
+}
+
+.cursor2 {
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: var(--gold);
+  opacity: .3;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width .3s, height .3s, opacity .3s;
+  z-index: 12;
+}
+
+.hover {
+  background-color: var(--gold);
+  opacity: 0.3;
+}
+
+.cursorinnerhover {
+  width: 50px;
+  height: 50px;
+  opacity: .5;
+}
+
+* {
+  cursor: none;
+}
+
 @import '../common/_header';
 @import '../common/_side-nav';
+@import '../common/_preloader';
 @import './_hero';
 @import './_services';
 @import './_nft';
 @import './_modal';
 @import './_jobs';
 @import './_about';
+@import './_contacts';

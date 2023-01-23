@@ -1,5 +1,12 @@
 {
+  "scripts": {
+    "build": "esbuild ./scripts/services.js --bundle --minify --outfile=./js/services.js"
+  },
   "dependencies": {
+    "esbuild": "0.17.4",
+    "gsap": "^3.11.4",
+    "just-validate": "^4.0.2",
+    "normalize.css": "^8.0.1",
     "swiper": "^8.4.6"
   }
 }

@@ -1,4 +1,8 @@
+import '../common/preloader'
+import '../common/cursor'
 import '../common/header'
+
+import { gsap } from "gsap";
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper';
 Swiper.use([Autoplay]);
@@ -86,3 +90,33 @@ const SLIDER_2 = new Swiper('.popup__slider-2', {
   speed: 40000,
   autoHeight: true
 })
+
+// animations 
+const MENU_ITEMS = document.querySelectorAll('.nav__item ')
+const MENU_ITEMS_REVERSED = [...MENU_ITEMS].reverse()
+const TL = gsap.timeline()
+TL.from('.jobs-slider', { duration: 3, x: -300, opacity: 0, stagger: 0.25 })
+  .from(MENU_ITEMS_REVERSED, { duration: 1.5, x: -200, opacity: 0, stagger: 0.1 }, '-=2')
+
+const MODAL_TL = gsap.timeline();
+const $MODAL_BUTTONS = document.querySelectorAll('.popup__button');
+MODAL_TL.fromTo('.popup__sliders', 1, { y: -200, opacity: 0 }, { y: 0, opacity: 1 })
+  .from('.popup__title', { duration: 0.6, scale: 0, x: -100, opacity: 0 })
+  .from('.popup__text', { duration: 0.6, scale: 0, x: -100, opacity: 0 })
+MODAL_TL.pause();
+
+$MODAL_BUTTONS.forEach(function (elem) {
+  elem.addEventListener('click', function (e) {
+    MODAL_TL.play();
+  });
+});
+
+const LINKS = document.querySelectorAll('.href')
+LINKS.forEach(element => {
+  element.addEventListener("click", (e) => {
+    e.preventDefault()
+    const HREF = element.href
+    TL.reverse()
+    setTimeout(function () { window.location = HREF }, 4000);
+  })
+});

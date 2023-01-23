@@ -1,0 +1,29 @@
+extends _layout.pug
+block content
+  +header("/about.html","#")
+  section.contacts
+    .contacts__content
+      .contacts__img
+        img(src='img/contacts/1.jpg' alt)
+      .form
+        h2.form__header Wirte to us
+        p.form__desc We are a studio that develops and creates digital art.
+        form.form(action='#')
+          .input-box
+            input#email(type='email' name='email' required placeholder='E-Mail' onfocus='placeholder=\'\'' onblur='placeholder=\'E-Mail\'')
+            label.form-error(for='email') Incorrect
+          .input-box
+            input#text(type='text' name='text' required placeholder='Message' onfocus='placeholder=\'\'' onblur='placeholder=\'Message\'')
+            label.form-error(for='text') Too short
+          .form__bottom
+            .check
+              input#checkbox(type='checkbox' name='checkbox' required)
+              label.label-checkbox(for='checkbox').
+              span I’m not a robot
+            button.form__button(type='button') send
+      .contacts__img
+        img(src='img/contacts/2.jpg' alt)
+      .contacts__img
+        img(src='img/contacts/3.jpg' alt)
+block scripts 
+  script(src="./js/contacts.js") 

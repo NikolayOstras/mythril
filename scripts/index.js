@@ -1,5 +1,7 @@
+import '../common/preloader'
+import '../common/cursor'
 import '../common/header'
-
+import { gsap } from "gsap";
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper';
 Swiper.use([Autoplay]);
@@ -38,3 +40,24 @@ const HERO_GALLERY_SWIPER = new Swiper('.hero-gallery', {
     },
   }
 })
+// animation
+const MENU_ITEMS = document.querySelectorAll('.nav__item ')
+const MENU_ITEMS_REVERSED = [...MENU_ITEMS].reverse()
+const SOCIALS_ITEMS = document.querySelectorAll('.network__item')
+const SOCIALS_ITEMS_REVERSED = [...SOCIALS_ITEMS].reverse()
+const TL = gsap.timeline()
+TL.from(MENU_ITEMS_REVERSED, { duration: 1.5, x: -200, opacity: 0, stagger: 0.1 })
+  .from(SOCIALS_ITEMS_REVERSED, { duration: 1, y: -200, opacity: 0, stagger: 0.1 }, '-=1.3')
+  .from('.hero__title-slider', { duration: 0.1, opacity: 0 })
+  .from('.hero-gallery', { duration: 1, y: -200, scale: 1.1, opacity: 0 })
+  .from('.hero__next', { duration: 1, y: -200, opacity: 0 });
+
+const LINKS = document.querySelectorAll('.href')
+LINKS.forEach(element => {
+  element.addEventListener("click", (e) => {
+    e.preventDefault()
+    const HREF = element.href
+    TL.reverse()
+    setTimeout(function () { window.location = HREF }, 4300);
+  })
+});

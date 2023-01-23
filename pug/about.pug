@@ -1,8 +1,32 @@
 extends _layout.pug
 block content
-  +side-nav(class="about__side-nav")
-  +header(class="about__header")
+  +side-nav("/contacts.html")(class="about__side-nav")
+  +header("/jobs.html","/contacts.html")(class="about__header")
   section.about
+    .about__collapse
+      .accordion.accordion-1
+        button.accordion__control(aria-expanded='false')
+          span.accordion__title About us
+          span.accordion__icon
+            +icon("#arrow")
+        .accordion__content(aria-hidden='true')
+          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
+          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
+      .accordion.accordion-2
+        button.accordion__control(aria-expanded='false')
+          span.accordion__title Our team
+          span.accordion__icon
+            +icon("#arrow")
+        .accordion__content(aria-hidden='true')
+          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
+          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
+      .accordion.accordion-3
+        button.accordion__control(aria-expanded='false')
+          span.accordion__title Our mission
+          span.accordion__icon 
+            +icon("#arrow")
+        .accordion__content(aria-hidden='true')
+          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem 
     .about__grid
       .about__us.about__item
         h3.about__title About us
@@ -19,47 +43,24 @@ block content
         img(src='img/about/1.jpg' alt)
       .about__img.about__img-2.about__item
         img(src='img/about/2.jpg' alt)
-    .about__slider
-      .about__swiper
-        .swiper-wrapper
-          .swiper-slide.about__slide
-            a(href='#')
-              +icon("#behance-xl")
-          .swiper-slide.about__slide
-            a(href='#')
-              +icon("#linkedin-xl")
-          .swiper-slide.about__slide
-            a(href='#')
-              +icon("#dribble-xl")
-          .swiper-slide.about__slide
-            a(href='#')
-              +icon("#twitter-xl")
-          .swiper-slide.about__slide
-            a(href='#')
-              +icon("#instagram-xl")
-    .about__collapse
-      .accordion.accordion-1
-        button.accordion__control(aria-expanded='false')
-          span.accordion__title About us
-          span.accordion__icon
-            +icon("arrow")
-        .accordion__content(aria-hidden='true')
-          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
-          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
-      .accordion.accordion-2
-        button.accordion__control(aria-expanded='false')
-          span.accordion__title Our team
-          span.accordion__icon
-            +icon("arrow")
-        .accordion__content(aria-hidden='true')
-          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
-          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
-      .accordion.accordion-3
-        button.accordion__control(aria-expanded='false')
-          span.accordion__title Our mission
-          span.accordion__icon 
-            +icon("arrow")
-        .accordion__content(aria-hidden='true')
-          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?  .
+    .about__wrapper
+      .about__slider
+        .about__swiper
+          .swiper-wrapper
+            .swiper-slide.about__slide
+              a(href='#')
+                +icon("#behance-xl")
+            .swiper-slide.about__slide
+              a(href='#')
+                +icon("#linkedin-xl")
+            .swiper-slide.about__slide
+              a(href='#')
+                +icon("#dribble-xl")
+            .swiper-slide.about__slide
+              a(href='#')
+                +icon("#twitter-xl")
+            .swiper-slide.about__slide
+              a(href='#')
+                +icon("#instagram-xl")
 block scripts
   script(src="./js/about.js") 

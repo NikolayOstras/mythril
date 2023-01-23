@@ -1,7 +1,7 @@
 extends _layout.pug
 block content
-  +header(class="nft__header")
-  +side-nav(class="nft__side-nav")
+  +header("/services.html","/jobs.html")(class="nft__header")
+  +side-nav("/jobs.html")(class="nft__side-nav")
   section.nft 
     .grid 
       .item
@@ -16,7 +16,7 @@ block content
         .item__title NFT’s for games
         .item__img
           img(src="./img/nft/games.jpg" alt="games")
-      .item
+      .item.title
         h2.nft__title nft 
       .item
         .item__title 3D generative art
@@ -30,7 +30,7 @@ block content
         .item__title 3D rotable art
         .item__img
           img(src="./img/nft/rotable.jpg" alt="rotable")
-      .square 
+      .square.square--xl 
       .square.square--sm
 block scripts
   script(src="./js/nft.js") 

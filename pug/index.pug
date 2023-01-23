@@ -1,6 +1,6 @@
 extends _layout.pug
 block content
-  +header
+  +header("#","/services.html")(class="hero__header")
   section.hero
     h1.visually-hidden Nft studio art
     .hero__body 
@@ -39,7 +39,7 @@ block content
         li.network__item
           a.network__link(href="")
             +icon("#twitter") 
-      a(href="#").hero__next
+      a(href="/services.html").hero__next.href
         +icon("#arrow")
         |next 
       p.hero__about 

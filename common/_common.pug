@@ -1,0 +1,107 @@
+mixin header(prev,next)
+	.header__container.visually-hidden(class!=attributes.class) 
+		header.header
+			a.logo.href(href="/index.html") 
+				|Mythril 
+				br
+				|Studio 
+			nav.nav 
+				ul.nav__list 
+					li.nav__item 
+						a.nav__link.href(href="/services.html") Services
+					li.nav__item 
+						a.nav__link.href(href="/nft.html") NFT
+					li.nav__item 
+						a.nav__link.href(href="/jobs.html") Jobs
+					li.nav__item 
+						a.nav__link.href(href="/about.html") About
+					li.nav__item 
+						a.nav__link.href(href="/contacts.html") Contacts
+			.nav-mobile
+				a.nav-mobile__item(href=prev)
+					+icon("#arrow")(class="nav-mobile__icon")
+					|prev
+				a.nav-mobile__item.nav-mobile__item--reversed(href=next)
+					+icon("#arrow")(class="nav-mobile__icon")
+					|next
+				button.nav-mobile__button
+					span
+		ul.nav__list.nav-mobile__list 
+			li.nav__item 
+				a.nav__link(href="/services.html") Services
+			li.nav__item 
+				a.nav__link(href="/nft.html") NFT
+			li.nav__item 
+				a.nav__link(href="/jobs.html") Jobs
+			li.nav__item 
+				a.nav__link(href="/about.html") About
+			li.nav__item 
+				a.nav__link(href="/contacts.html") Contacts
+		.header__bottom 
+			ul.network 
+				li.network__item
+					a.network__link(href="") 
+						+icon("#behance")
+				li.network__item
+					a.network__link(href="")
+						+icon("#linkedin") 
+				li.network__item
+					a.network__link(href="")
+						+icon("#dribble") 
+				li.network__item
+					a.network__link(href="")
+						+icon("#instagram") 
+				li.network__item
+					a.network__link(href="")
+						+icon("#twitter") 
+			a(href="#").header__mail info@mythril.space
+
+mixin preloader 
+	section.preloader.container 
+		.preloader__header
+			a.logo(href="/index.html") 
+				|Mythril 
+				br
+				|Studio 
+		.preloader__body Making art..
+		.preloader__footer We are a studio that develops and creates digital art.
+
+
+mixin side-nav(next)
+	nav.side-nav(class!=attributes.class)
+		ul.side-nav__list
+			li.side-nav__item
+				a.side-nav__link.href(href="/services.html") Services
+			li.side-nav__item
+				a.side-nav__link.href(href="/nft.html") NFT
+			li.side-nav__item
+				a.side-nav__link.href(href="/jobs.html") Jobs 
+			li.side-nav__item
+				a.side-nav__link.href(href="/about.html") About 
+			li.side-nav__item
+				a.side-nav__link.href(href="/contacts.html") Contacts
+		a.side-nav__button.href(href=next) 
+			span next
+			+icon("#arrow")
+
+
+//- jobs slider
+mixin slider(img1,img2)
+	.jobs-slider(class!=attributes.class) 
+		.swiper-wrapper 
+			.swiper-slide.jobs-slide 
+				.jobs-slide__img 
+					img(src=img1 alt="job")
+				.jobs-slide__content 
+					h4.jobs-slide__title Cyber Girls
+					p.jobs-slide__text 
+						|Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					button.popup__button(data-micromodal-trigger='modal-1') look more
+			.swiper-slide.jobs-slide 
+				.jobs-slide__img 
+					img(src=img2 alt="job")
+				.jobs-slide__content 
+					h4.jobs-slide__title Cyber Girls
+					p.jobs-slide__text 
+						|Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					button.popup__button(data-micromodal-trigger='modal-1') look more

@@ -128,7 +128,19 @@
         </section>
     <div class="cursor"> </div>
     <div class="cursor2"></div>
-        <div class="header__container visually-hidden nft__header"> 
+        <nav class="side-nav about__side-nav">
+          <ul class="side-nav__list">
+            <li class="side-nav__item"><a class="side-nav__link href" href="/services.html">Services</a></li>
+            <li class="side-nav__item"><a class="side-nav__link href" href="/nft.html">NFT</a></li>
+            <li class="side-nav__item"><a class="side-nav__link href" href="/jobs.html">Jobs </a></li>
+            <li class="side-nav__item"><a class="side-nav__link href" href="/about.html">About </a></li>
+            <li class="side-nav__item"><a class="side-nav__link href" href="/contacts.html">Contacts</a></li>
+          </ul><a class="side-nav__button href" href="/contacts.html"> <span>next</span>
+                <svg class="icon">
+                  <use href="#arrow"></use>
+                </svg></a>
+        </nav>
+        <div class="header__container visually-hidden about__header"> 
           <header class="header"><a class="logo href" href="/index.html">
                Mythril <br>Studio </a>
             <nav class="nav"> 
@@ -140,10 +152,10 @@
                 <li class="nav__item"> <a class="nav__link href" href="/contacts.html">Contacts</a></li>
               </ul>
             </nav>
-            <div class="nav-mobile"><a class="nav-mobile__item" href="/services.html">
+            <div class="nav-mobile"><a class="nav-mobile__item" href="/jobs.html">
                     <svg class="icon nav-mobile__icon">
                       <use href="#arrow"></use>
-                    </svg>prev</a><a class="nav-mobile__item nav-mobile__item--reversed" href="/jobs.html">
+                    </svg>prev</a><a class="nav-mobile__item nav-mobile__item--reversed" href="/contacts.html">
                     <svg class="icon nav-mobile__icon">
                       <use href="#arrow"></use>
                     </svg>next</a>
@@ -182,51 +194,85 @@
             </ul><a class="header__mail" href="#">info@mythril.space</a>
           </div>
         </div>
-        <nav class="side-nav nft__side-nav">
-          <ul class="side-nav__list">
-            <li class="side-nav__item"><a class="side-nav__link href" href="/services.html">Services</a></li>
-            <li class="side-nav__item"><a class="side-nav__link href" href="/nft.html">NFT</a></li>
-            <li class="side-nav__item"><a class="side-nav__link href" href="/jobs.html">Jobs </a></li>
-            <li class="side-nav__item"><a class="side-nav__link href" href="/about.html">About </a></li>
-            <li class="side-nav__item"><a class="side-nav__link href" href="/contacts.html">Contacts</a></li>
-          </ul><a class="side-nav__button href" href="/jobs.html"> <span>next</span>
-                <svg class="icon">
-                  <use href="#arrow"></use>
-                </svg></a>
-        </nav>
-    <section class="nft"> 
-      <div class="grid"> 
-        <div class="item">
-          <div class="item__title">Animated NFT’s</div>
-          <div class="item__img"><img src="./img/nft/animated.jpg" alt="animated"></div>
+    <section class="about">
+      <div class="about__collapse">
+        <div class="accordion accordion-1">
+          <button class="accordion__control" aria-expanded="false"><span class="accordion__title">About us</span><span class="accordion__icon">
+                  <svg class="icon">
+                    <use href="#arrow"></use>
+                  </svg></span></button>
+          <div class="accordion__content" aria-hidden="true">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?</p>
+          </div>
         </div>
-        <div class="item">
-          <div class="item__title">NFT collections</div>
-          <div class="item__img"><img src="./img/nft/collections.jpg" alt="collections"></div>
+        <div class="accordion accordion-2">
+          <button class="accordion__control" aria-expanded="false"><span class="accordion__title">Our team</span><span class="accordion__icon">
+                  <svg class="icon">
+                    <use href="#arrow"></use>
+                  </svg></span></button>
+          <div class="accordion__content" aria-hidden="true">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?</p>
+          </div>
         </div>
-        <div class="item">
-          <div class="item__title">NFT’s for games</div>
-          <div class="item__img"><img src="./img/nft/games.jpg" alt="games"></div>
+        <div class="accordion accordion-3">
+          <button class="accordion__control" aria-expanded="false"><span class="accordion__title">Our mission</span><span class="accordion__icon"> 
+                  <svg class="icon">
+                    <use href="#arrow"></use>
+                  </svg></span></button>
+          <div class="accordion__content" aria-hidden="true">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem </p>
+          </div>
         </div>
-        <div class="item title">
-          <h2 class="nft__title">nft </h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__us about__item">
+          <h3 class="about__title">About us</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis? </p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?</p>
         </div>
-        <div class="item">
-          <div class="item__title">3D generative art</div>
-          <div class="item__img"><img src="./img/nft/generative-3d.jpg" alt="3D"></div>
+        <div class="about__misson about__item">
+          <h3 class="about__title">Our mission</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?</p>
         </div>
-        <div class="item">
-          <div class="item__title">2D generative art</div>
-          <div class="item__img"><img src="./img/nft/generative.jpg" alt="2D"></div>
+        <div class="about__team about__item">
+          <h3 class="about__title">Our team</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, excepturi totam facilis, dolorum est voluptatem doloremque ratione provident tempora, earum tempore? Consectetur, maiores ullam delectus eius officiis nobis dignissimos? Ipsam!</p>
         </div>
-        <div class="item">
-          <div class="item__title">3D rotable art</div>
-          <div class="item__img"><img src="./img/nft/rotable.jpg" alt="rotable"></div>
+        <div class="about__img about__item"><img src="img/about/1.jpg" alt></div>
+        <div class="about__img about__img-2 about__item"><img src="img/about/2.jpg" alt></div>
+      </div>
+      <div class="about__wrapper">
+        <div class="about__slider">
+          <div class="about__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide about__slide"><a href="#">
+                      <svg class="icon">
+                        <use href="#behance-xl"></use>
+                      </svg></a></div>
+              <div class="swiper-slide about__slide"><a href="#">
+                      <svg class="icon">
+                        <use href="#linkedin-xl"></use>
+                      </svg></a></div>
+              <div class="swiper-slide about__slide"><a href="#">
+                      <svg class="icon">
+                        <use href="#dribble-xl"></use>
+                      </svg></a></div>
+              <div class="swiper-slide about__slide"><a href="#">
+                      <svg class="icon">
+                        <use href="#twitter-xl"></use>
+                      </svg></a></div>
+              <div class="swiper-slide about__slide"><a href="#">
+                      <svg class="icon">
+                        <use href="#instagram-xl"></use>
+                      </svg></a></div>
+            </div>
+          </div>
         </div>
-        <div class="square square--xl"> </div>
-        <div class="square square--sm"></div>
       </div>
     </section>
-    <script src="./js/nft.js"> </script>
+    <script src="./js/about.js"> </script>
   </body>
 </html>
