@@ -1,0 +1,19 @@
+mixin side-nav(next)
+	nav.side-nav(class=attributes.class)
+		ul.side-nav__list
+			li.side-nav__item
+				a.side-nav__link.href(href="./index.html") Home
+			li.side-nav__item
+				a.side-nav__link.href(href="./services.html") Services
+			li.side-nav__item
+				a.side-nav__link.href(href="./nft.html") NFT
+			li.side-nav__item
+				a.side-nav__link.href(href="./jobs.html") Jobs 
+			li.side-nav__item
+				a.side-nav__link.href(href="./about.html") About 
+			li.side-nav__item
+				a.side-nav__link.href(href="./contacts.html") Contacts
+		a.side-nav__button.href(href=next) 
+			span next
+			i.bx.bxs-down-arrow
+

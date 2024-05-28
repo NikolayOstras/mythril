@@ -1,0 +1,97 @@
+%fade-in {
+	opacity: 0;
+	animation: fade-in 0.5s 0.2s ease-out forwards;
+
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
+//
+@mixin touch-device {
+	@media (hover: none) and (pointer: coarse) {
+		@content;
+	}
+}
+
+//
+%hover-after {
+	&::after {
+		content: '';
+		position: absolute;
+		height: 1px;
+		width: 100%;
+		display: block;
+		bottom: -2px;
+		background-color: var(--accent);
+		opacity: 0;
+		transform: scaleX(0);
+		transition: opacity 0.3s cubic-bezier(0.075, 0.82, 0.165, 1),
+			transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+
+	&:hover::after {
+		opacity: 1;
+		transform: scaleX(1);
+	}
+
+	@include touch-device {
+		&::after {
+			display: none;
+		}
+	}
+}
+
+%hover-after-vertical {
+	@extend %hover-after;
+	&::after {
+		width: 1px;
+		height: 100%;
+		transform: scaleX(1);
+		transform: scaleY(0);
+		bottom: 0;
+		left: -2px;
+	}
+	&:hover::after {
+		transform: scaleY(1);
+	}
+}
+
+// Mixin for responsive typography
+@mixin responsive-font($min-font-size, $max-font-size) {
+	font-size: $min-font-size;
+
+	@media (min-width: 768px) {
+		font-size: calc(
+			#{$min-font-size} + (#{$max-font-size} - #{$min-font-size}) * ((
+							100vw - 768px
+						) / (1200 - 768))
+		);
+	}
+
+	@media (min-width: 1200px) {
+		font-size: $max-font-size;
+	}
+}
+//
+
+%bounce {
+	animation: bounce 4s infinite;
+	@keyframes bounce {
+		0% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(10px); /* Adjust the bounce height */
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+}

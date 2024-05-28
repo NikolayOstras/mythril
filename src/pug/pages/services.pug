@@ -1,0 +1,38 @@
+extends ../_layout.pug
+block content
+	+side-nav("./nft.html")
+	+header("./index.html","./nft.html")(class="services__header")
+	section.services 
+		span
+		.services-slider.ss-1
+			.services-slider__wrapper
+				img(src="./img/services/2d/1.jpg" alt="nft")
+				.services-info
+					h4.services-info__title 
+						|2D art & animation
+					ul.services-info__list 
+						li.services-info__item Concept Design
+						li.services-info__item Illustrations
+						li.services-info__item UI
+						li.services-info__item Logo Design
+						li.services-info__item In-Game Art
+				.services-slider__img
+					img(src="./img/services/2d/2.jpg" alt="nft")
+				.swiper-slide.services-slider__img
+					img(src="./img/services/2d/3.jpg" alt="nft")
+		.services-slider-2.ss-2
+			.services-slider__wrapper
+				img(src="./img/services/3d/1.jpg" alt="nft")
+				.services-info
+					h4.services-info__title 
+						|3D art & animation
+					ul.services-info__list 
+						li.services-info__item High Poly Zbrush sculpting
+						li.services-info__item Modeling/PBR Texturing
+						li.services-info__item Motion Capture
+						li.services-info__item 3D Rendering-VRay
+						li.services-info__item Game and Film Rigging
+				.services-slider__img
+					img(src="./img/services/3d/2.jpg" alt="nft")
+				.services-slider__img
+					img(src="./img/services/3d/3.jpg" alt="nft")

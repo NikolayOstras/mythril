@@ -1,0 +1,45 @@
+extends ../_layout.pug
+block content
+	+side-nav("./contacts.html")(class="about__side-nav")
+	+header("./jobs.html","./contacts.html")(class="about__header")
+	section.about.container
+		.about__collapse
+			.accordion.accordion-1
+				button.accordion__control(aria-expanded='false')
+					span.accordion__title About us
+					span.accordion__icon
+						i.bx.bx-chevron-down
+				.accordion__content(aria-hidden='true')
+					p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
+					p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
+			.accordion.accordion-2
+				button.accordion__control(aria-expanded='false')
+					span.accordion__title Our team
+					span.accordion__icon
+						i.bx.bx-chevron-down
+				.accordion__content(aria-hidden='true')
+					p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
+					p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem animi maiores pariatur perspiciatis amet aspernatur, ipsum, tenetur nam perferendis?
+			.accordion.accordion-3
+				button.accordion__control(aria-expanded='false')
+					span.accordion__title Our mission
+					span.accordion__icon 
+						i.bx.bx-chevron-down
+				.accordion__content(aria-hidden='true')
+					p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit non error tenetur laudantium molestiae, corporis, optio ut numquam! Consequuntur rem 
+		ul.network.about__network 
+						li.network__item
+							a.network__link(href="") 
+								i.bx.bxl-behance
+						li.network__item
+							a.network__link(href="")
+								i.bx.bxl-facebook
+						li.network__item
+							a.network__link(href="")
+								i.bx.bxl-twitter
+						li.network__item
+							a.network__link(href="")
+								i.bx.bxl-instagram
+						li.network__item
+							a.network__link(href="")
+								i.bx.bxl-linkedin
