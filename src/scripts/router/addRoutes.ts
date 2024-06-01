@@ -5,7 +5,7 @@ import { jobsPageController } from '../pages/jobs/jobsPageController'
 import { servicesPageController } from '../pages/services/servicesPageController'
 
 export const addRoutes = router => {
-	router.addRoute('/build/', 'home-page', homePageController)
+	router.addRoute('/', 'home-page', homePageController)
 	router.addRoute('/about', 'about-page', aboutPageController)
 	router.addRoute('/services', 'services-page', servicesPageController)
 	router.addRoute('/nft', 'nft-page')
