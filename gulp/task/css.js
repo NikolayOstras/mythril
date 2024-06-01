@@ -3,7 +3,7 @@ import cleanCss from 'gulp-clean-css'
 
 export const css = () => {
 	return app.gulp
-		.src(`${app.path.build.css}style.css`, {})
+		.src(`${app.path.build.css}/main.css`, {})
 		.pipe(
 			app.plugins.plumber(
 				app.plugins.notify.onError({

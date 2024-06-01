@@ -205,7 +205,6 @@
       $burger = $header.querySelector(".nav-mobile__button");
       $menu = $header.querySelector(".mobile-nav-wrapper");
     }
-    console.log("header:", $header);
     if ($burger) {
       $burger.addEventListener("click", () => {
         $header.classList.toggle("is-active");
@@ -225,22 +224,6 @@
     const accordion1 = accordion1Element ? new Accordion(".accordion-1", { speed: 500, spoilers: false }) : null;
     const accordion2 = accordion2Element ? new Accordion(".accordion-2", { speed: 500, spoilers: false }) : null;
     const accordion3 = accordion3Element ? new Accordion(".accordion-3", { speed: 500, spoilers: false }) : null;
-    return () => {
-      accordion1?.destroy();
-      accordion2?.destroy();
-      accordion3?.destroy();
-    };
-  };
-
-  // src/scripts/pages/admin/adminPageController.ts
-  var adminPageController = () => {
-    console.log("dgdg");
-    const accordion1Element = document.querySelector(".accordion-admin-1");
-    const accordion2Element = document.querySelector(".accordion-admin-2");
-    const accordion3Element = document.querySelector(".accordion-admin-3");
-    const accordion1 = accordion1Element ? new Accordion(".accordion-admin-1", { speed: 500, spoilers: false }) : null;
-    const accordion2 = accordion2Element ? new Accordion(".accordion-admin-2", { speed: 500, spoilers: false }) : null;
-    const accordion3 = accordion3Element ? new Accordion(".accordion-admin-3", { speed: 500, spoilers: false }) : null;
     return () => {
       accordion1?.destroy();
       accordion2?.destroy();
@@ -6595,7 +6578,6 @@
     router2.addRoute("/nft", "nft-page");
     router2.addRoute("/jobs", "jobs-page", jobsPageController);
     router2.addRoute("/contacts", "contacts-page", contactsPageController);
-    router2.addRoute("/admin", "admin-page", adminPageController);
   };
 
   // src/scripts/router/linksHandler.ts
