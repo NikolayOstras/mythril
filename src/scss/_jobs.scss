@@ -1,6 +1,6 @@
 .jobs {
 	overflow: hidden;
-	padding-top: 80px;
+	// padding-top: 80px;
 	// .jobs__helper
 
 	&__helper {
@@ -76,7 +76,7 @@
 	// .jobs-slide__text
 
 	&__text {
-		@include responsive-font(14px, 20px);
+		@include responsive-font(14px, 16px);
 	}
 }
 

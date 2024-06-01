@@ -1,19 +1,13 @@
-import { aboutPageController } from './scripts/aboutPageController'
-import { contactsPageController } from './scripts/contactsPageController'
 import { cursorController } from './scripts/cursorController'
-import { headerController } from './scripts/headerController'
-import { homePageController } from './scripts/homePageController'
-import { jobsPageController } from './scripts/jobsPageController'
 import { preloaderController } from './scripts/preloaderController'
-import { servicesPageController } from './scripts/servicesPageController'
-
+import Router from './scripts/router/Router'
+import { addRoutes } from './scripts/router/addRoutes'
+import { linksHandler } from './scripts/router/linksHandler'
+const router = new Router('root')
+addRoutes(router)
+router.loadRoute()
+linksHandler(router)
 document.addEventListener('DOMContentLoaded', () => {
 	preloaderController()
 	cursorController()
-	headerController()
-	homePageController()
-	servicesPageController()
-	jobsPageController()
-	aboutPageController()
-	contactsPageController()
 })

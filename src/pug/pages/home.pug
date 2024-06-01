@@ -1,0 +1,40 @@
+include ../common/header
+template#home-page
+	+header("/build/","/services")(class="hero__header")
+	main.page
+		section.hero
+			h1.visually-hidden Nft studio art
+			.hero__body 
+				.hero-gallery
+					.swiper-wrapper 
+						.swiper-slide.hero-gallery__item
+							.hero-title__item Horns N Bones
+							img(src="https://cdn.dribbble.com/userupload/14865564/file/original-04618b026df8ba28f2253e57041c54f1.png?resize=1504x1128" alt="")
+						.swiper-slide.hero-gallery__item
+							.hero-title__item Modern Technical K-letter logo design
+							img(src="https://cdn.dribbble.com/userupload/14872169/file/original-bd05967110451abd7b3cb3d51dd6a87b.jpg?resize=752x" alt="")
+						.swiper-slide.hero-gallery__item
+							.hero-title__item Horizon Homes - Real Estate Web App Design Dashboard
+							img(src="https://cdn.dribbble.com/userupload/14861515/file/original-77122cb7428b77b039d7ee9628141c3b.png?resize=752x" alt="")
+			.hero__footer.container 
+				ul.network.hero__network 
+					li.network__item
+						a.network__link(href="") 
+							i.bx.bxl-behance
+					li.network__item
+						a.network__link(href="")
+							i.bx.bxl-facebook
+					li.network__item
+						a.network__link(href="")
+							i.bx.bxl-twitter
+					li.network__item
+						a.network__link(href="")
+							i.bx.bxl-instagram
+					li.network__item
+						a.network__link(href="")
+							i.bx.bxl-linkedin
+				p.hero__about 
+					|We are a studio that develops and creates digital art.
+			a(href="/services" data-link).hero__next.href
+					i.bx.bxs-down-arrow
+					|next 

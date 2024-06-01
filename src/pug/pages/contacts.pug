@@ -1,10 +1,10 @@
-extends ../_layout.pug
-block content
-  +header("./about.html","#")
+include ../common/header
+template#contacts-page
+  +header("/about","/contacts")
   section.contacts
     .contacts__content
       .contacts__img
-        img(src='img/contacts/1.jpg' alt)
+        img(src='https://cdn.dribbble.com/userupload/14815025/file/original-3d3d44a97338a3c86ab62672de003bd2.png?resize=1504x1128' alt="")
       .form
         h2.form__header Wirte to us
         p.form__desc We are a studio that develops and creates digital art.
@@ -22,6 +22,6 @@ block content
               span I’m not a robot
             button.form__button(type='submit') send
       .contacts__img
-        img(src='img/contacts/2.jpg' alt)
+        img(src='https://cdn.dribbble.com/userupload/14457998/file/original-2e7e4b9d94caad529cd80e316bb1b2dd.png?resize=1504x1127' alt="")
       .contacts__img
-        img(src='img/contacts/3.jpg' alt)
+        img(src='https://cdn.dribbble.com/userupload/14607508/file/original-c9f10a8ae87fadafd688e1ed6b827cfe.png?resize=1504x1128' alt="")

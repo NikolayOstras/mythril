@@ -1,7 +1,8 @@
-extends ../_layout.pug
-block content
-	+side-nav("./contacts.html")(class="about__side-nav")
-	+header("./jobs.html","./contacts.html")(class="about__header")
+include ../common/side-nav
+include ../common/header
+template#about-page
+	+side-nav("/contacts")(class="about__side-nav")
+	+header("/jobs","/contacts")(class="about__header")
 	section.about.container
 		.about__collapse
 			.accordion.accordion-1

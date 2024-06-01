@@ -1,33 +1,34 @@
-extends ../_layout.pug
-block content
-  +header("./services.html","./jobs.html")(class="nft__header")
+include ../common/header
+template#nft-page
+  +header("/services","/jobs")(class="nft__header")
   main.page 
     section.nft 
       .grid 
         .item
           .item__title Animated NFT’s
           .item__img
-            img(src="./img/nft/animated.jpg" alt="animated")
+             video(autoplay loop muted  width="150" height="150")
+              source(src='https://cdn.dribbble.com/users/2214794/screenshots/16811647/media/c11b3e883f8bac56ca0eb50e30d0eb55.mp4' type='video/mp4')
         .item
           .item__title NFT collections
           .item__img
-            img(src="./img/nft/collections.jpg" alt="collections")
+            video(autoplay loop muted  width="150" height="150")
+              source(src='https://cdn.dribbble.com/users/3465177/screenshots/16302896/media/8bc13b924429aeda668463ae19aaa7c8.mp4' type='video/mp4')
         .item
           .item__title NFT’s for games
           .item__img
-            img(src="./img/nft/games.jpg" alt="games")
+            img(src="https://cdn.dribbble.com/userupload/3268993/file/original-7627b254d800c15d87545c8801f6797f.png?resize=1504x1128" alt="games")
         .item.title
           h2.nft__title nft 
         .item
           .item__title 3D generative art
           .item__img
-            img(src="./img/nft/generative-3d.jpg" alt="3D")
+            img(src="https://cdn.dribbble.com/userupload/5985410/file/original-e0385efca6c629ec3a2a032e42eef94d.jpg?resize=1504x1504" alt="3D")
         .item
           .item__title 2D generative art
           .item__img
-            img(src="./img/nft/generative.jpg" alt="2D")
+            img(src="https://cdn.dribbble.com/userupload/8212611/file/original-b671272ef3ee2c92c688519cbaa1840c.jpg?resize=1504x1504" alt="2D")
         .item
           .item__title 3D rotable art
           .item__img
-            img(src="./img/nft/rotable.jpg" alt="rotable")
-        .square.square--xl 
+            img(src="https://cdn.dribbble.com/users/6011888/screenshots/18227098/media/8daa728ce67c5b5f9449e605bb8ad72d.jpg?resize=1200x900&vertical=center" alt="rotable" width="150" height="150")

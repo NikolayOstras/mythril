@@ -97,6 +97,10 @@ html {
 
 body {
   color: var(--gold);
+}
+
+#root {
+  height: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
@@ -751,7 +755,7 @@ body.inactive {
 }
 
 .hero-title__item {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
   position: relative;
@@ -764,12 +768,12 @@ body.inactive {
 }
 @media (min-width: 768px) {
   .hero-title__item {
-    font-size: calc(18px + (24px - 18px) * (100vw - 768px) / 432);
+    font-size: calc(14px + (16px - 14px) * (100vw - 768px) / 432);
   }
 }
 @media (min-width: 1200px) {
   .hero-title__item {
-    font-size: 24px;
+    font-size: 16px;
   }
 }
 
@@ -832,6 +836,7 @@ body.inactive {
 .services-slider,
 .services-slider-2 {
   padding: 0 60px;
+  width: 50%;
 }
 @media (max-width: 767.98px) {
   .services-slider,
@@ -901,6 +906,12 @@ body.inactive {
 
 .ss-1 .services-slider__wrapper {
   animation: scroll-up 60s linear infinite;
+}
+
+.services-slider__wrapper img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .ss-2 .services-slider__wrapper {
@@ -983,21 +994,6 @@ body.inactive {
 }
 .item__img {
   flex-shrink: 0;
-}
-
-.square {
-  position: absolute;
-  border: 1px solid var(--gold);
-  top: 2px;
-  left: 164px;
-  width: calc(100% - 328px);
-  height: calc(100% - 4px);
-  z-index: -1;
-}
-@media (max-width: 992px) {
-  .square--xl {
-    display: none;
-  }
 }
 
 .grid {
@@ -1164,7 +1160,6 @@ body.inactive {
 
 .jobs {
   overflow: hidden;
-  padding-top: 80px;
 }
 .jobs__helper {
   position: absolute;
@@ -1238,12 +1233,12 @@ body.inactive {
 }
 @media (min-width: 768px) {
   .jobs-slide__text {
-    font-size: calc(14px + (20px - 14px) * (100vw - 768px) / 432);
+    font-size: calc(14px + (16px - 14px) * (100vw - 768px) / 432);
   }
 }
 @media (min-width: 1200px) {
   .jobs-slide__text {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 

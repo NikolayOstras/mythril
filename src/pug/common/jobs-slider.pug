@@ -1,4 +1,4 @@
-mixin slider(img1,img2)
+mixin slider(img1,img2,trigger1,trigger2)
 	.jobs-slider(class=attributes.class) 
 		.swiper-wrapper 
 			.swiper-slide.jobs-slide 
@@ -8,7 +8,7 @@ mixin slider(img1,img2)
 					h4.jobs-slide__title Cyber Girls
 					p.jobs-slide__text 
 						|Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-					button.popup__button(data-micromodal-trigger='modal-1') 			look more
+					button.popup__button(data-micromodal-trigger=trigger1) 			look more
 						i.bx.bx-chevron-right
 
 			.swiper-slide.jobs-slide 
@@ -18,5 +18,5 @@ mixin slider(img1,img2)
 					h4.jobs-slide__title Cyber Girls
 					p.jobs-slide__text 
 						|Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-					button.popup__button(data-micromodal-trigger='modal-1') 			look more
+					button.popup__button(data-micromodal-trigger=trigger2) 			look more
 						i.bx.bx-chevron-right

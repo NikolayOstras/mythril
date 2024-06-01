@@ -1,9 +1,10 @@
-extends ../_layout.pug
-block content
-  include ../common/jobs-slider.pug
-  +header("./nft.html","./about.html")
+
+include ../common/header
+include ../common/jobs-slider
+template#jobs-page
+  +header("/nft","/about")
   section.jobs 
-    +slider("./img/jobs/1.jpg","./img/jobs/2.jpg")
+    +slider("https://cdn.dribbble.com/userupload/14784190/file/original-cd9fb446f070701407fbae77e512d4a6.png?resize=1504x1128","https://cdn.dribbble.com/users/8009763/screenshots/18438950/media/4644ab1cc8a55133a3fe996ac26f17fc.png?resize=1200x900&vertical=center","modal-1","modal-1")
     .jobs__helper 
       |swipe to more
       i.bx.bx-chevron-right
@@ -17,11 +18,11 @@ block content
             .popup__slider
               .swiper-wrapper
                 .swiper-slide.popup__slide
-                  img(src='img/jobs-popup/1.jpg' alt)
+                  img(src='https://cdn.dribbble.com/userupload/14784190/file/original-cd9fb446f070701407fbae77e512d4a6.png?resize=1504x1128' alt="")
                 .swiper-slide.popup__slide
-                  img(src='img/jobs-popup/2.jpg' alt)
+                  img(src='https://cdn.dribbble.com/userupload/14784190/file/original-cd9fb446f070701407fbae77e512d4a6.png?resize=1504x1128' alt="+")
                 .swiper-slide.popup__slide
-                  img(src='img/jobs-popup/3.jpg' alt)
+                  img(src='https://cdn.dribbble.com/userupload/14784190/file/original-cd9fb446f070701407fbae77e512d4a6.png?resize=1504x1128' alt="")
           .popup__content
             .popup__top
               h2.popup__title Cyber Girls

@@ -1,12 +1,13 @@
-extends ../_layout.pug
-block content
+include ../common/side-nav
+include ../common/header
+template#services-page
 	+side-nav("./nft.html")
-	+header("./index.html","./nft.html")(class="services__header")
+	+header("/build/","/nft")(class="services__header")
 	section.services 
 		span
 		.services-slider.ss-1
 			.services-slider__wrapper
-				img(src="./img/services/2d/1.jpg" alt="nft")
+				img(src="https://cdn.dribbble.com/userupload/11858049/file/original-2f0087a386ff085102337838e4866700.jpg?resize=752x" alt="")
 				.services-info
 					h4.services-info__title 
 						|2D art & animation
@@ -17,12 +18,12 @@ block content
 						li.services-info__item Logo Design
 						li.services-info__item In-Game Art
 				.services-slider__img
-					img(src="./img/services/2d/2.jpg" alt="nft")
+					img(src="https://cdn.dribbble.com/userupload/12044337/file/original-2060f0ea2bfd32395b323e5d7cafcc60.png?resize=1504x1128" alt="")
 				.swiper-slide.services-slider__img
-					img(src="./img/services/2d/3.jpg" alt="nft")
+					img(src="https://cdn.dribbble.com/userupload/8946095/file/original-873b646d1ffa5018a588d148e697175c.png?resize=1504x1128" alt="")
 		.services-slider-2.ss-2
 			.services-slider__wrapper
-				img(src="./img/services/3d/1.jpg" alt="nft")
+				img(src="https://cdn.dribbble.com/userupload/11002609/file/original-734bac5776227631689360407e0dbe24.png?resize=1504x871" alt="")
 				.services-info
 					h4.services-info__title 
 						|3D art & animation
@@ -33,6 +34,6 @@ block content
 						li.services-info__item 3D Rendering-VRay
 						li.services-info__item Game and Film Rigging
 				.services-slider__img
-					img(src="./img/services/3d/2.jpg" alt="nft")
+					img(src="https://cdn.dribbble.com/users/1018473/screenshots/15688445/media/47ece4e89747a511f20f162ce62c79e3.jpg?resize=1200x900&vertical=center" alt="")
 				.services-slider__img
-					img(src="./img/services/3d/3.jpg" alt="nft")
+					img(src="https://cdn.dribbble.com/userupload/6248300/file/original-980888c4f288e3725dd9a69234abfd9a.png?resize=1200x675" alt="")

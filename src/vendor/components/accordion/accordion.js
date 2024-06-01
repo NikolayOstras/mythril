@@ -78,4 +78,14 @@ export default class Accordion {
 			console.warn('No accordion instances found to close.')
 		}
 	}
+
+	destroy() {
+		this.accordion.removeEventListener('click', this.event)
+		this.accordion.removeAttribute('accord-init')
+		this.all = []
+		const index = accordionAllInstances.indexOf(this)
+		if (index > -1) {
+			accordionAllInstances.splice(index, 1)
+		}
+	}
 }

@@ -78,7 +78,7 @@
 	// .hero-title__item
 
 	&__item {
-		@include responsive-font(18px, 24px);
+		@include responsive-font(14px, 16px);
 		font-weight: 500;
 		text-transform: uppercase;
 		position: relative;

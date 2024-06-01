@@ -2,18 +2,18 @@ mixin side-nav(next)
 	nav.side-nav(class=attributes.class)
 		ul.side-nav__list
 			li.side-nav__item
-				a.side-nav__link.href(href="./index.html") Home
+				a.side-nav__link.href(href="/build/" data-link) Home
 			li.side-nav__item
-				a.side-nav__link.href(href="./services.html") Services
+				a.side-nav__link.href(href="/services" data-link) Services
 			li.side-nav__item
-				a.side-nav__link.href(href="./nft.html") NFT
+				a.side-nav__link.href(href="/nft" data-link) NFT
 			li.side-nav__item
-				a.side-nav__link.href(href="./jobs.html") Jobs 
+				a.side-nav__link.href(href="/jobs" data-link) Jobs 
 			li.side-nav__item
-				a.side-nav__link.href(href="./about.html") About 
+				a.side-nav__link.href(href="/about" data-link) About 
 			li.side-nav__item
-				a.side-nav__link.href(href="./contacts.html") Contacts
-		a.side-nav__button.href(href=next) 
+				a.side-nav__link.href(href="/contacts" data-link) Contacts
+		a.side-nav__button.href(href=next data-link) 
 			span next
 			i.bx.bxs-down-arrow
 

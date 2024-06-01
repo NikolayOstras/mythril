@@ -54,23 +54,6 @@
 	}
 }
 
-.square {
-	position: absolute;
-
-	border: 1px solid var(--gold);
-	top: 2px;
-	left: 164px;
-	width: calc(100% - 328px);
-	height: calc(100% - 4px);
-	z-index: -1;
-
-	&--xl {
-		@media (max-width: 992px) {
-			display: none;
-		}
-	}
-}
-
 .grid {
 	border: 1px solid var(--gold);
 	height: 100%;

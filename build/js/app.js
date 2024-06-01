@@ -1,4 +1,116 @@
 (() => {
+  // src/scripts/cursorController.ts
+  var cursorController = () => {
+    const cursor = document.querySelector(".cursor");
+    const cursorInner = document.querySelector(".cursor2");
+    const links = document.querySelectorAll("a");
+    if (cursor) {
+      cursor.style.display = "none";
+    }
+    if (cursorInner) {
+      cursorInner.style.opacity = "0";
+    }
+    const canHover = window.matchMedia("(hover: hover)").matches;
+    if (canHover) {
+      document.addEventListener("mousemove", (e2) => {
+        if (cursor) {
+          cursor.style.display = "block";
+        }
+        if (cursorInner) {
+          cursorInner.style.opacity = "1";
+          cursorInner.style.left = `${e2.clientX}px`;
+          cursorInner.style.top = `${e2.clientY}px`;
+        }
+        if (cursor) {
+          cursor.style.transform = `translate3d(calc(${e2.clientX}px - 50%), calc(${e2.clientY}px - 50%), 0)`;
+        }
+      });
+      document.addEventListener("mousedown", () => {
+        if (cursor) {
+          cursor.classList.add("click");
+        }
+        if (cursorInner) {
+          cursorInner.classList.add("cursorinnerhover");
+        }
+      });
+      document.addEventListener("mouseup", () => {
+        if (cursor) {
+          cursor.classList.remove("click");
+        }
+        if (cursorInner) {
+          cursorInner.classList.remove("cursorinnerhover");
+        }
+      });
+      links.forEach((link) => {
+        link.addEventListener("mouseover", () => {
+          if (cursor) {
+            cursor.classList.add("hover");
+          }
+        });
+        link.addEventListener("mouseleave", () => {
+          if (cursor) {
+            cursor.classList.remove("hover");
+          }
+        });
+      });
+    }
+  };
+
+  // src/scripts/preloaderController.ts
+  var preloaderController = () => {
+    const PRELOADER = document.querySelector(".preloader");
+    const BODY = document.querySelector("body");
+    const HEADER = document.querySelector(".header__container");
+    if (PRELOADER)
+      PRELOADER.style.display = "none";
+    if (BODY)
+      BODY.classList.remove("inactive");
+    if (HEADER)
+      HEADER.classList.remove("visually-hidden");
+  };
+
+  // src/scripts/router/Router.ts
+  var Router = class {
+    routes = [];
+    rootElement;
+    currentControllerCleanup = () => {
+    };
+    constructor(rootElementId) {
+      this.rootElement = document.getElementById(rootElementId);
+      window.addEventListener("popstate", () => this.loadRoute());
+    }
+    addRoute(path, templateId, controller) {
+      this.routes.push({ path, templateId, controller });
+    }
+    loadRoute() {
+      if (typeof this.currentControllerCleanup === "function") {
+        this.currentControllerCleanup();
+      }
+      const currentPath = window.location.pathname;
+      const route = this.routes.find((r2) => r2.path === currentPath);
+      if (route) {
+        const template = document.getElementById(
+          route.templateId
+        );
+        if (template) {
+          this.rootElement.innerHTML = "";
+          this.rootElement.appendChild(template.content.cloneNode(true));
+          this.currentControllerCleanup = route.controller ? route.controller() : () => {
+          };
+        }
+      } else {
+        this.rootElement.innerHTML = "<h1>404 - Page Not Found</h1>";
+        this.currentControllerCleanup = () => {
+        };
+      }
+    }
+    navigate(path) {
+      history.pushState({}, "", path);
+      this.loadRoute();
+    }
+  };
+  var Router_default = Router;
+
   // src/vendor/components/accordion/accordion.js
   var accordionAllInstances = [];
   var Accordion = class {
@@ -72,31 +184,68 @@
         console.warn("No accordion instances found to close.");
       }
     }
+    destroy() {
+      this.accordion.removeEventListener("click", this.event);
+      this.accordion.removeAttribute("accord-init");
+      this.all = [];
+      const index2 = accordionAllInstances.indexOf(this);
+      if (index2 > -1) {
+        accordionAllInstances.splice(index2, 1);
+      }
+    }
   };
 
-  // src/scripts/aboutPageController.ts
+  // src/scripts/headerController.ts
+  var $body = document.querySelector("body");
+  var headerController = () => {
+    const $header = document.querySelector(".header__container");
+    let $burger;
+    let $menu;
+    if ($header) {
+      $burger = $header.querySelector(".nav-mobile__button");
+      $menu = $header.querySelector(".mobile-nav-wrapper");
+    }
+    console.log("header:", $header);
+    if ($burger) {
+      $burger.addEventListener("click", () => {
+        $header.classList.toggle("is-active");
+        if ($menu)
+          $menu.classList.toggle("is-active");
+        $body.classList.toggle("inactive");
+      });
+    }
+  };
+
+  // src/scripts/pages/about/aboutPageController.ts
   var aboutPageController = () => {
+    headerController();
     const accordion1Element = document.querySelector(".accordion-1");
-    if (accordion1Element) {
-      const accordion1 = new Accordion(".accordion-1", {
-        speed: 500,
-        spoilers: false
-      });
-    }
     const accordion2Element = document.querySelector(".accordion-2");
-    if (accordion2Element) {
-      const accordion2 = new Accordion(".accordion-2", {
-        speed: 500,
-        spoilers: false
-      });
-    }
     const accordion3Element = document.querySelector(".accordion-3");
-    if (accordion3Element) {
-      const accordion3 = new Accordion(".accordion-3", {
-        speed: 500,
-        spoilers: false
-      });
-    }
+    const accordion1 = accordion1Element ? new Accordion(".accordion-1", { speed: 500, spoilers: false }) : null;
+    const accordion2 = accordion2Element ? new Accordion(".accordion-2", { speed: 500, spoilers: false }) : null;
+    const accordion3 = accordion3Element ? new Accordion(".accordion-3", { speed: 500, spoilers: false }) : null;
+    return () => {
+      accordion1?.destroy();
+      accordion2?.destroy();
+      accordion3?.destroy();
+    };
+  };
+
+  // src/scripts/pages/admin/adminPageController.ts
+  var adminPageController = () => {
+    console.log("dgdg");
+    const accordion1Element = document.querySelector(".accordion-admin-1");
+    const accordion2Element = document.querySelector(".accordion-admin-2");
+    const accordion3Element = document.querySelector(".accordion-admin-3");
+    const accordion1 = accordion1Element ? new Accordion(".accordion-admin-1", { speed: 500, spoilers: false }) : null;
+    const accordion2 = accordion2Element ? new Accordion(".accordion-admin-2", { speed: 500, spoilers: false }) : null;
+    const accordion3 = accordion3Element ? new Accordion(".accordion-admin-3", { speed: 500, spoilers: false }) : null;
+    return () => {
+      accordion1?.destroy();
+      accordion2?.destroy();
+      accordion3?.destroy();
+    };
   };
 
   // node_modules/.pnpm/just-validate@4.3.0/node_modules/just-validate/dist/just-validate.es.js
@@ -1681,60 +1830,52 @@
     }
   };
 
-  // src/scripts/contactsPageController.ts
+  // src/scripts/pages/contacts/contactsPageController.ts
   var contactsPageController = () => {
+    headerController();
     const $FORM = document.querySelector(".form");
-    const $fromButton = document.querySelector(".form__button");
+    const $formButton = document.querySelector(".form__button");
+    let VALIDATE = null;
     if ($FORM) {
-      const VALIDATE = new JustValidate(".form", {
+      VALIDATE = new JustValidate(".form", {
         errorFieldCssClass: "is-invalid",
         focusInvalidField: false,
         lockForm: true,
         validateBeforeSubmitting: true
       });
       VALIDATE.addField("#text", [
-        {
-          rule: "minLength",
-          value: 10
-        },
-        {
-          rule: "required",
-          errorMessage: "This field is required"
-        },
-        {
-          rule: "maxLength",
-          value: 300
-        }
+        { rule: "minLength", value: 10 },
+        { rule: "required", errorMessage: "This field is required" },
+        { rule: "maxLength", value: 300 }
       ]).addField("#email", [
-        {
-          rule: "required",
-          errorMessage: "This field is required"
-        },
+        { rule: "required", errorMessage: "This field is required" },
         {
           rule: "email",
           errorMessage: "Please enter a valid email address"
         }
       ]).addField("#checkbox", [
-        {
-          rule: "required",
-          errorMessage: "This field is required"
-        }
+        { rule: "required", errorMessage: "This field is required" }
       ]).onSuccess(async (event2) => {
         if (event2)
           event2.preventDefault();
-        if ($fromButton)
-          $fromButton.classList.add("is-loading");
+        if ($formButton)
+          $formButton.classList.add("is-loading");
         try {
           await new Promise((resolve) => setTimeout(resolve, 2e3));
           showSuccessMessage();
         } catch (error) {
           showErrorMessage();
         } finally {
-          if ($fromButton)
-            $fromButton.classList.remove("is-loading");
+          if ($formButton)
+            $formButton.classList.remove("is-loading");
         }
       });
     }
+    return () => {
+      if (VALIDATE) {
+        VALIDATE.destroy();
+      }
+    };
   };
   function showSuccessMessage() {
     alert("Form submitted successfully!");
@@ -1742,76 +1883,6 @@
   function showErrorMessage() {
     alert("Error submitting form!");
   }
-
-  // src/scripts/cursorController.ts
-  var cursorController = () => {
-    const cursor = document.querySelector(".cursor");
-    const cursorInner = document.querySelector(".cursor2");
-    const links = document.querySelectorAll("a");
-    if (cursor) {
-      cursor.style.display = "none";
-    }
-    if (cursorInner) {
-      cursorInner.style.opacity = "0";
-    }
-    const canHover = window.matchMedia("(hover: hover)").matches;
-    if (canHover) {
-      document.addEventListener("mousemove", (e2) => {
-        if (cursor) {
-          cursor.style.display = "block";
-        }
-        if (cursorInner) {
-          cursorInner.style.opacity = "1";
-          cursorInner.style.left = `${e2.clientX}px`;
-          cursorInner.style.top = `${e2.clientY}px`;
-        }
-        if (cursor) {
-          cursor.style.transform = `translate3d(calc(${e2.clientX}px - 50%), calc(${e2.clientY}px - 50%), 0)`;
-        }
-      });
-      document.addEventListener("mousedown", () => {
-        if (cursor) {
-          cursor.classList.add("click");
-        }
-        if (cursorInner) {
-          cursorInner.classList.add("cursorinnerhover");
-        }
-      });
-      document.addEventListener("mouseup", () => {
-        if (cursor) {
-          cursor.classList.remove("click");
-        }
-        if (cursorInner) {
-          cursorInner.classList.remove("cursorinnerhover");
-        }
-      });
-      links.forEach((link) => {
-        link.addEventListener("mouseover", () => {
-          if (cursor) {
-            cursor.classList.add("hover");
-          }
-        });
-        link.addEventListener("mouseleave", () => {
-          if (cursor) {
-            cursor.classList.remove("hover");
-          }
-        });
-      });
-    }
-  };
-
-  // src/scripts/headerController.ts
-  var $header = document.querySelector(".header__container");
-  var $burger = $header.querySelector(".nav-mobile__button");
-  var $menu = $header.querySelector(".mobile-nav-wrapper");
-  var $body = document.querySelector("body");
-  var headerController = () => {
-    $burger.addEventListener("click", () => {
-      $header.classList.toggle("is-active");
-      $menu.classList.toggle("is-active");
-      $body.classList.toggle("inactive");
-    });
-  };
 
   // node_modules/.pnpm/ssr-window@4.0.2/node_modules/ssr-window/ssr-window.esm.js
   function isObject(obj) {
@@ -6270,9 +6341,10 @@
     });
   }
 
-  // src/scripts/homePageController.ts
+  // src/scripts/pages/home/homePageController.ts
   core_default.use([Autoplay]);
   var homePageController = () => {
+    headerController();
     const heroGallerySlider = new core_default(".hero-gallery", {
       speed: 2500,
       loop: true,
@@ -6289,6 +6361,11 @@
         }
       }
     });
+    return () => {
+      if (heroGallerySlider) {
+        heroGallerySlider.destroy(true, true);
+      }
+    };
   };
 
   // node_modules/.pnpm/micromodal@0.4.10/node_modules/micromodal/dist/micromodal.es.js
@@ -6448,9 +6525,10 @@
   "undefined" != typeof window && (window.MicroModal = l);
   var micromodal_es_default = l;
 
-  // src/scripts/jobsPageController.ts
+  // src/scripts/pages/jobs/jobsPageController.ts
   core_default.use([Autoplay]);
   var jobsPageController = () => {
+    headerController();
     micromodal_es_default.init();
     const jobsSlider = new core_default(".jobs-slider", {
       speed: 5e3,
@@ -6483,24 +6561,16 @@
         }
       }
     });
+    return () => {
+      jobsSlider.destroy(true, true);
+      popupSlider.destroy(true, true);
+    };
   };
 
-  // src/scripts/preloaderController.ts
-  var preloaderController = () => {
-    const PRELOADER = document.querySelector(".preloader");
-    const BODY = document.querySelector("body");
-    const HEADER = document.querySelector(".header__container");
-    if (PRELOADER)
-      PRELOADER.style.display = "none";
-    if (BODY)
-      BODY.classList.remove("inactive");
-    if (HEADER)
-      HEADER.classList.remove("visually-hidden");
-  };
-
-  // src/scripts/servicesPageController.ts
+  // src/scripts/pages/services/servicesPageController.ts
   var slideSelector = ".services-slider__wrapper";
   var servicesPageController = () => {
+    headerController();
     const root1 = document.querySelector(".ss-1");
     const root2 = document.querySelector(".ss-2");
     if (root1) {
@@ -6517,15 +6587,38 @@
     }
   };
 
+  // src/scripts/router/addRoutes.ts
+  var addRoutes = (router2) => {
+    router2.addRoute("/build/", "home-page", homePageController);
+    router2.addRoute("/about", "about-page", aboutPageController);
+    router2.addRoute("/services", "services-page", servicesPageController);
+    router2.addRoute("/nft", "nft-page");
+    router2.addRoute("/jobs", "jobs-page", jobsPageController);
+    router2.addRoute("/contacts", "contacts-page", contactsPageController);
+    router2.addRoute("/admin", "admin-page", adminPageController);
+  };
+
+  // src/scripts/router/linksHandler.ts
+  var linksHandler = (router2) => {
+    document.addEventListener("click", (event2) => {
+      const target = event2.target;
+      if (target.tagName === "A" && target.hasAttribute("data-link")) {
+        event2.preventDefault();
+        const path = target.getAttribute("href");
+        if (path) {
+          router2.navigate(path);
+        }
+      }
+    });
+  };
+
   // src/app.ts
+  var router = new Router_default("root");
+  addRoutes(router);
+  router.loadRoute();
+  linksHandler(router);
   document.addEventListener("DOMContentLoaded", () => {
     preloaderController();
     cursorController();
-    headerController();
-    homePageController();
-    servicesPageController();
-    jobsPageController();
-    aboutPageController();
-    contactsPageController();
   });
 })();

@@ -1,26 +1,26 @@
 mixin header(prev,next)
 	.header__container.container(class=attributes.class) 
 		header.header
-			a.logo.href(href="./index.html") 
+			a.logo.href(href="/build/" data-link) 
 				|Mythril 
 				br
 				|Studio 
 			nav.nav 
 				ul.nav__list 
 					li.nav__item 
-						a.nav__link.href(href="./services.html") Services
+						a.nav__link.href(href="/services" data-link) Services
 					li.nav__item 
-						a.nav__link.href(href="./nft.html") NFT
+						a.nav__link.href(href="/nft" data-link) NFT
 					li.nav__item 
-						a.nav__link.href(href="./jobs.html") Jobs
+						a.nav__link.href(href="/jobs" data-link) Jobs
 					li.nav__item 
-						a.nav__link.href(href="./about.html") About
+						a.nav__link.href(href="/about" data-link) About
 					li.nav__item 
-						a.nav__link.href(href="./contacts.html") Contacts
+						a.nav__link.href(href="/contacts" data-link) Contacts
 			.nav-mobile
-				a.nav-mobile__item(href=prev)
+				a.nav-mobile__item(href=prev data-link)
 					|prev
-				a.nav-mobile__item.nav-mobile__item--reversed(href=next)
+				a.nav-mobile__item.nav-mobile__item--reversed(href=next data-link)
 					|next
 				button.nav-mobile__button
 					span
