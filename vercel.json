@@ -5,12 +5,12 @@
 			"destination": "/"
 		},
 		{
-			"source": "css/main.css",
-			"destination": "css/main.css"
+			"source": "/css/main.css",
+			"destination": "/css/main.css"
 		},
 		{
-			"source": "./js/app.js",
-			"destination": "./js/app.js"
+			"source": "/js/app.js",
+			"destination": "/js/app.js"
 		}
 	]
 }
