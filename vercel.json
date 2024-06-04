@@ -1,16 +1,20 @@
 {
 	"redirects": [
 		{
-			"source": "/:path*",
+			"source": "/about",
 			"destination": "/"
 		},
 		{
-			"source": "/css/main.css",
-			"destination": "/css/main.css"
+			"source": "/contacts",
+			"destination": "/"
 		},
 		{
-			"source": "/js/app.js",
-			"destination": "/js/app.js"
+			"source": "/jobs",
+			"destination": "/"
+		},
+		{
+			"source": "/services",
+			"destination": "/"
 		}
 	]
 }
