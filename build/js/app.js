@@ -77,6 +77,7 @@
     };
     constructor(rootElementId) {
       this.rootElement = document.getElementById(rootElementId);
+      this.loadRoute();
       window.addEventListener("popstate", () => this.loadRoute());
     }
     addRoute(path, templateId, controller) {
@@ -6550,6 +6551,11 @@
     };
   };
 
+  // src/scripts/pages/nft/nftPageController.ts
+  var nftPageController = () => {
+    headerController();
+  };
+
   // src/scripts/pages/services/servicesPageController.ts
   var slideSelector = ".services-slider__wrapper";
   var servicesPageController = () => {
@@ -6575,7 +6581,7 @@
     router2.addRoute("/", "home-page", homePageController);
     router2.addRoute("/about", "about-page", aboutPageController);
     router2.addRoute("/services", "services-page", servicesPageController);
-    router2.addRoute("/nft", "nft-page");
+    router2.addRoute("/nft", "nft-page", nftPageController);
     router2.addRoute("/jobs", "jobs-page", jobsPageController);
     router2.addRoute("/contacts", "contacts-page", contactsPageController);
   };

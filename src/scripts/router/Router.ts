@@ -11,6 +11,7 @@ class Router {
 
 	constructor(rootElementId: string) {
 		this.rootElement = document.getElementById(rootElementId) as HTMLElement
+		this.loadRoute()
 		window.addEventListener('popstate', () => this.loadRoute())
 	}
 
