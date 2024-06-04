@@ -46,7 +46,8 @@ class Router {
 					: () => {}
 			}
 		} else {
-			this.rootElement.innerHTML = '<h1>404 - Page Not Found</h1>'
+			this.rootElement.innerHTML =
+				'<h1>404 - Page Not Found</h1> <a href="/" data-link>Home page</a>'
 			this.currentControllerCleanup = () => {} // Ensure it's a function
 		}
 	}

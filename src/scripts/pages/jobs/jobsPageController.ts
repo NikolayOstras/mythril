@@ -1,3 +1,4 @@
+import gsap from 'gsap'
 import MicroModal from 'micromodal'
 import Swiper, { Autoplay } from 'swiper'
 import { headerController } from '../../headerController'
@@ -39,6 +40,29 @@ export const jobsPageController = () => {
 			},
 		},
 	})
+	// Получаем элементы
+	const items = document.querySelectorAll('.jobs-slider')
+
+	// Создаем timeline
+	const timeline = gsap.timeline({ paused: true })
+
+	// Добавляем анимацию для каждого элемента
+	items.forEach((item, index) => {
+		timeline.from(
+			item,
+			{
+				duration: 0.8,
+				x: Math.random() * 100 - 50,
+				y: Math.random() * 100 - 50,
+				opacity: 0,
+				ease: 'power2.out',
+			},
+			index * 0.1
+		)
+	})
+
+	// Запускаем анимацию при загрузке страницы
+	timeline.play()
 
 	// Cleanup function
 	return () => {

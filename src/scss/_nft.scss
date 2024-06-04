@@ -26,6 +26,11 @@
 }
 
 .item {
+	overflow: hidden;
+	padding: 4px;
+	background-color: #000;
+	position: relative;
+	z-index: 10;
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
@@ -51,6 +56,12 @@
 
 	&__img {
 		flex-shrink: 0;
+
+		& video {
+			width: 150px;
+			height: auto;
+			aspect-ratio: 1/1;
+		}
 	}
 }
 
@@ -58,15 +69,15 @@
 	border: 1px solid var(--gold);
 	height: 100%;
 	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	padding: 8px;
+	grid-template-columns: repeat(5, 1fr);
+	padding: 22px;
 
 	position: relative;
 
 	@media (max-width: 992px) {
 		grid-template-columns: repeat(4, 1fr);
 
-		gap: 30px;
+		gap: 10px;
 	}
 	@media (max-width: 767.92px) {
 		grid-template-columns: repeat(3, 1fr);

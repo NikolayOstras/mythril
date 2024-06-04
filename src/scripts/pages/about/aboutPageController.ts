@@ -1,3 +1,4 @@
+import gsap from 'gsap'
 import Accordion from '../../../vendor/components/accordion/accordion'
 import { headerController } from '../../headerController'
 
@@ -16,7 +17,22 @@ export const aboutPageController = () => {
 	const accordion3 = accordion3Element
 		? new Accordion('.accordion-3', { speed: 500, spoilers: false })
 		: null
+	// Выберем элементы списка сети
+	const networkItems = document.querySelectorAll('.network__item')
 
+	// Создадим timeline-анимацию
+	const tl = gsap.timeline()
+
+	// Добавим анимацию для каждого элемента списка
+	networkItems.forEach((item, index) => {
+		tl.from(item, {
+			duration: 0.6,
+			y: -20,
+			opacity: 0,
+			ease: 'power2.out',
+			delay: index * 0.01,
+		})
+	})
 	return () => {
 		// Assuming Accordion has a destroy method to clean up
 		accordion1?.destroy()
