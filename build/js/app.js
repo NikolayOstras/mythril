@@ -6572,7 +6572,7 @@
 
   // src/scripts/router/addRoutes.ts
   var addRoutes = (router2) => {
-    router2.addRoute("/build/", "home-page", homePageController);
+    router2.addRoute("/", "home-page", homePageController);
     router2.addRoute("/about", "about-page", aboutPageController);
     router2.addRoute("/services", "services-page", servicesPageController);
     router2.addRoute("/nft", "nft-page");
