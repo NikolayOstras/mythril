@@ -2,7 +2,8 @@
 	"redirects": [
 		{
 			"source": "/:path*",
-			"destination": "/"
+			"destination": "/",
+			"exclude": ["/css/main.css", "./js/app.js"]
 		}
 	]
 }
