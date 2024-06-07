@@ -10680,8 +10680,8 @@
       if (titleItem) {
         gsapWithCSS.fromTo(
           titleItem,
-          { x: -50 },
-          { x: 0, duration: 2, ease: "power2.out" }
+          { x: 0 },
+          { x: -20, duration: 1, ease: "power2.out" }
         );
       } else {
         console.error(".hero-title__item not found");
@@ -10689,8 +10689,8 @@
       if (imageItem) {
         gsapWithCSS.fromTo(
           imageItem,
-          { x: 100 },
-          { x: 0, duration: 3, ease: "power2.out" }
+          { x: 0 },
+          { x: 20, duration: 3, ease: "power2.out" }
         );
       } else {
         console.error("Image not found");
